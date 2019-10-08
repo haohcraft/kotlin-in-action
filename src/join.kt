@@ -17,3 +17,22 @@ fun <T> joinToString(
     result.append(postfix)
     return result.toString()
 }
+
+/**
+ * receiver type: "String"
+ * receiver object: "this"
+ */
+//fun String.lastChar() = this.get(this.length - 1)
+val String.lastChar: Char
+    get() {
+        return this.get(this.length - 1)
+    }
+
+/**
+ * This will only work on a collection of string
+ */
+fun Collection<String>.join(
+    separator: String = ", ",
+    prefix: String = "",
+    postfix: String = ""
+) = joinToString(separator, prefix, postfix)
