@@ -47,10 +47,8 @@ internal open class TalkativeButton : Focusable {
     protected fun whisper() = println("let's talk")
 }
 
-fun TalkativeButton.giveSpeech() {
-    yell()
-    whisper()
-}
+//
+
 
 /**
  * 4.1.4 inner and nested classes: nested by default
@@ -155,8 +153,6 @@ object Payroll {
     }
 
 }
-
-class Person
 
 /** 4.4.2 companion objects: a place for factory methods and static members **/
 /** 4.4.4. Object expressions: anonymous inner classes rephrased **/
