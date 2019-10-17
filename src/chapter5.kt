@@ -1,4 +1,5 @@
 import Person
+import java.lang.StringBuilder
 
 /**
  * Chapter 5. Programming with lambdas
@@ -93,8 +94,52 @@ fun findPeopleWhoseNameStartsA(): List<String> {
 
 /***
  * Lambda implementation details
+ *
+ * Every lambda expression is compiled into an anonymous class, unless it's an inline lambda.
  */
 
+/**
+ * 5.4.2 SAM constructors: explicit conversion of lambdas to functional interfaces
+ */
 
+/**
+ * 5.5 Lambdas with receivers: with and apply
+ */
 
+fun alphabet(): String {
+    val result = StringBuilder()
+    for (letter in 'A'..'Z') {
+        result.append(letter)
+    }
+    result.append("\nNow I know the alphabet!")
+    return result.toString()
+}
+
+fun alphabetWith(): String {
+    val stringBuilder = StringBuilder()
+    return with(stringBuilder) {
+        for (letter in 'A'..'B') {
+            this.append(letter)
+        }
+        this.append("\nNow I know the alphabet!")
+        this.toString()
+    }
+}
+
+/**
+ * A lambda is a way to define behavior similar to a regular function.
+ * A lambda with a receiver is a way to define behavior similar to an extension function.
+ */
+/**
+ * 5.5.2 The "Apply" function
+ * The apply function is declared as an extension function.
+ * Its receiver becomes the receiver of the lambda passed as an argument.
+ * The result of executing apply is StringBuilder, so you call toString to convert it to String afterward.
+ */
+fun alphabetApply() = StringBuilder().apply {
+    for (letter in 'A'..'B') {
+        append(letter)
+    }
+    append("\nNow I know the alphabet!")
+}.toString()
 
