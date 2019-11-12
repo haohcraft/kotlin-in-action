@@ -78,4 +78,18 @@ fun fail(message: String): Nothing {
 /**
  * 6.3. COLLECTIONS AND ARRAYS
  *
+ * 6.3.1. Nullability and collections
+ *
+ */
+
+// L1's individual could be null
+val L1: List<Int?> = listOf(1)
+
+// L2, itself could be null
+val L2: List<Int>? = listOf()
+
+/**
+ * Kotlin has a function { filterNotNull }
+ *
+ * A key thing to keep in mind when working with collection interfaces is that read-only collections aren’t necessarily immutable.
  */
